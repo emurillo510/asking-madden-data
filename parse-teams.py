@@ -3,12 +3,13 @@ from bs4 import BeautifulSoup
 
 doc  = BeautifulSoup(open("target/nfl-teams-2013-REG-Overall.html"), "html.parser")
 
-#nfl_afc_header = doc.select("tr.thd1.AFCcolors td")
-#nfl_afc_conference = doc.select("tr.thd2 > td")
-#nfl_afc_conference_header = doc.select("tr.thd2 td a")
-#nfl_teams = doc.select("tr.tbdy1 td a")
-#nfl_teams_stats = doc.select("tr.tbdy1 td")
-#nfl_teams_links = doc.select("tr.tbdy1 td a")
+
+nfl_afc_header = doc.select("tr.thd1.AFCcolors td")
+nfl_afc_conference = doc.select("tr.thd2 > td")
+nfl_afc_conference_header = doc.select("tr.thd2 td a")
+nfl_teams = doc.select("tr.tbdy1 td a")
+nfl_teams_stats = doc.select("tr.tbdy1 td")
+nfl_teams_links = doc.select("tr.tbdy1 td a")
 
 
 
@@ -34,8 +35,13 @@ doc  = BeautifulSoup(open("target/nfl-teams-2013-REG-Overall.html"), "html.parse
 
 # get nfl teams stats
 #for child in nfl_teams_stats:
-	#print child
-#print nfl_teams_stats
+#	if child.string:
+#		print child.string
+#	else:
+#		team_name = child.find('a')
+#		print team_name.string.strip()
+
+#cprint nfl_teams_stats
 
 # get nfl team sites
 #base_url="http://www.nfl.com/"
