@@ -4,48 +4,77 @@ from bs4 import BeautifulSoup
 doc  = BeautifulSoup(open("target/nfl-teams-2013-REG-Overall.html"), "html.parser")
 
 
-nfl_afc_header = doc.select("tr.thd1.AFCcolors td")
+nfl_header = doc.select("tr.thd1 td")
 nfl_afc_conference = doc.select("tr.thd2 > td")
 nfl_afc_conference_header = doc.select("tr.thd2 td a")
 nfl_teams = doc.select("tr.tbdy1 td a")
 nfl_teams_stats = doc.select("tr.tbdy1 td")
 nfl_teams_links = doc.select("tr.tbdy1 td a")
+nfl_nfc_header = doc.select("tr.thd1.NFCcolors td")
 
 
-
-#nfl_nfc_header = doc.select("tr.thd1.NFCcolors td")
-
-# print AFC conference
-#print nfl_afc_header[0].string.strip()
+# print AFC and NFC conference
+for i in nfl_header:
+	print i.string.strip()
 
 # get NFL conferences
-#for child in nfl_afc_conference:
-#	if child.string:
-#		print child.string
+for child in nfl_afc_conference:
+	if child.string:
+		print child.string
 
+stats_header = []
 # get statistics header
-#for child in nfl_afc_conference_header:
-#	if child.string:
-#		print child.string
+for i in range(0,17):
+	stats_header.append(nfl_afc_conference_header[i].string)
+
+stats_header.insert(0,"Team")
+stats_header =  ','.join(stats_header)
+
+print stats_header
 
 # get nfl teams
-#for child in nfl_afc_teams:
+#for child in nfl_teams:
 #	if child.string:
 #		print child.string.strip()
 
+team_row = []
 # get nfl teams stats
-#for child in nfl_teams_stats:
-#	if child.string:
-#		print child.string
-#	else:
-#		team_name = child.find('a')
-#		print team_name.string.strip()
+'''
+for i in nfl_teams_stats:
+	if i.string:
+		team_row.append(str(i.string))
+	else:
+		team_name = i.find('a')
+		team_row.append(str(i.string))
+'''
+team_row = []
+for i,j in enumerate(nfl_teams_stats):
 
-#cprint nfl_teams_stats
+	if j.string:
+		team_row.append(str(j.string))
+	else:
+		team_name = j.find('a').string.strip()
+		team_row.append(str(team_name))
+
+
+team_row_str = ""
+for i,j in enumerate(team_row):
+	if (i%18 == 0 and i > 0):
+		team_row_str = team_row_str[:-1]
+		team_row_str += "\n" + j + ","
+	else:
+		team_row_str += j +","
+	if (i==len(team_row)-1):
+		team_row_str = team_row_str[:-1]	
+
+print team_row_str
+
+#print ",".join(team_row)
 
 # get nfl team sites
 #base_url="http://www.nfl.com/"
+
 #for child in nfl_teams_links:
 #	print base_url+child["href"]
 
-#print nfl_nfc_header[0].string.strip()
+
