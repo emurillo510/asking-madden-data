@@ -5,3 +5,5 @@ TODO
 ===
 [ ] Need to add Conference column into CSV
 [ ] Need to add Season column into CSV
+[ ] Parse Team Stats
+[ ] Parse Player Stats
