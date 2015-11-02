@@ -7,3 +7,4 @@ TODO
 [ ] Need to add Season column into CSV
 [ ] Parse Team Stats
 [ ] Parse Player Stats
+[ ] Test if all files are converted to CSV correctly.

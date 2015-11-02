@@ -17,10 +17,12 @@ nfl_nfc_header = doc.select("tr.thd1.NFCcolors td")
 for i in nfl_header:
 	print i.string.strip()
 
+nfl_divisions = []
 # get NFL conferences
 for child in nfl_afc_conference:
 	if child.string:
-		print child.string
+		nfl_divisions.append(str(child.string))
+print nfl_divisions
 
 stats_header = []
 # get statistics header
@@ -28,6 +30,8 @@ for i in range(0,17):
 	stats_header.append(nfl_afc_conference_header[i].string)
 
 stats_header.insert(0,"Team")
+stats_header.insert(1,"Season")
+stats_header.insert(2,"Division")
 stats_header =  ','.join(stats_header)
 
 print stats_header
@@ -58,14 +62,23 @@ for i,j in enumerate(nfl_teams_stats):
 
 
 team_row_str = ""
+div_counter = 0
 for i,j in enumerate(team_row):
 	if (i%18 == 0 and i > 0):
 		team_row_str = team_row_str[:-1]
-		team_row_str += "\n" + j + ","
+		if (i < 288):
+			team_row_str += "\n" + j + "," + nfl_header[0].string.strip() +  "," + nfl_divisions[div_counter] + ","
+		else:
+			team_row_str += "\n" + j + "," +  nfl_header[1].string.strip() + ","  "," + nfl_divisions[div_counter] + ","
 	else:
-		team_row_str += j +","
+		if(i==0):
+			team_row_str += j + "," + nfl_header[0].string.strip() + "," + nfl_divisions[div_counter] + ","
+		else:
+			team_row_str += j +","
+			
 	if (i==len(team_row)-1):
 		team_row_str = team_row_str[:-1]	
+
 
 print team_row_str
 
