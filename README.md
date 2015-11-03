@@ -1,4 +1,6 @@
-# asking-madden
+#project: asking-madden
+#author(s): Elton Murillo
+#date: 11-3-2015
 This project is to build an online database for NFL data (teams and players).
 
 TODO
@@ -8,3 +10,4 @@ TODO
 [ ] Parse Team Stats
 [ ] Parse Player Stats
 [ ] Test if all files are converted to CSV correctly.
+
