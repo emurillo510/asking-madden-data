@@ -16,7 +16,7 @@ echo "Calling ${baseUrl}..."
 echo ${SEASONS[@]}
 echo ${SPLITS[@]}
 
-for year in {2000..2015}
+for year in {2002..2015}
 do
     for season in ${SEASONS[@]}
     do
