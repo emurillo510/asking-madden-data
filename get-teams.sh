@@ -22,7 +22,7 @@ do
     do
         for split in ${SPLITS[@]}
         do
-            curl -Av "$userAgent" "http://www.nfl.com/standings?category=div&season=$year-$season&split=$split" -o "target/nfl-teams-$year-$season-$split.html"
+            curl -A "$userAgent" "http://www.nfl.com/standings?category=div&season=$year-$season&split=$split" -o "target/nfl-teams-$year-$season-$split.html"
             sleep $[ ( $RANDOM % 10 )  + 1 ]s
         done
     done
