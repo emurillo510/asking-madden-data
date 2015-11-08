@@ -9,6 +9,7 @@ files = glob.glob(path)
 for file in files:
 	doc  = BeautifulSoup(open(file), "html.parser")
 
+	print file
 	nfl_header = doc.select("tr.thd1 td")
 	nfl_afc_conference = doc.select("tr.thd2 > td")
 	nfl_afc_conference_header = doc.select("tr.thd2 td a")
@@ -67,16 +68,19 @@ for file in files:
 				team_name = j.find('a').string.strip()
 				team_row.append(str(team_name))
 
-
 		team_row_str = ""
 		div_counter = 0
+		record_row = 288
 		for i,j in enumerate(team_row):
+			if (i%(18*4) == 0 and i > 0):
+				div_counter = div_counter + 1
+
 			if (i%18 == 0 and i > 0):
 				team_row_str = team_row_str[:-1]
-				if (i < 288):
+				if (i < record_row):
 					team_row_str += "\n" + j + "," + nfl_header[0].string.strip() +  "," + nfl_divisions[div_counter] + ","
 				else:
-					team_row_str += "\n" + j + "," +  nfl_header[1].string.strip() + ","  "," + nfl_divisions[div_counter] + ","
+					team_row_str += "\n" + j + "," +  nfl_header[1].string.strip() + "," + nfl_divisions[div_counter] + ","
 			else:
 				if(i==0):
 					team_row_str += j + "," + nfl_header[0].string.strip() + "," + nfl_divisions[div_counter] + ","
@@ -85,10 +89,6 @@ for file in files:
 		
 			if (i==len(team_row)-1):
 				team_row_str = team_row_str[:-1]
-			if (i%288 == 0):
-				div_counter += 1				
-				print "div counter: " + str(div_counter)
-				print "div: " + nfl_divisions[div_counter]
 		print team_row_str
 
 		#print ",".join(team_row)
