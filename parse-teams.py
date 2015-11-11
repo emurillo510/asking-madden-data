@@ -9,7 +9,12 @@ files = glob.glob(path)
 for file in files:
 	doc  = BeautifulSoup(open(file), "html.parser")
 
-	print file
+	file_output_name = file + ".csv"
+	file_output = open(file_output_name, "w")
+
+	
+
+	#print file
 	nfl_header = doc.select("tr.thd1 td")
 	nfl_afc_conference = doc.select("tr.thd2 > td")
 	nfl_afc_conference_header = doc.select("tr.thd2 td a")
@@ -22,15 +27,19 @@ for file in files:
 
 
 		# print AFC and NFC conference
+		'''
 		for i in nfl_header:
 			print i.string.strip()
+		'''
 
+	
 		nfl_divisions = []
 		# get NFL conferences
 		for child in nfl_afc_conference:
 			if child.string:
 				nfl_divisions.append(str(child.string))
-		print nfl_divisions
+		#print nfl_divisions
+		
 
 		stats_header = []
 		# get statistics header
@@ -43,6 +52,8 @@ for file in files:
 		stats_header =  ','.join(stats_header)
 
 		print stats_header
+		file_output.write(stats_header)
+		file_output.write("\n")
 
 		# get nfl teams
 		#for child in nfl_teams:
@@ -90,6 +101,10 @@ for file in files:
 			if (i==len(team_row)-1):
 				team_row_str = team_row_str[:-1]
 		print team_row_str
+		file_output.write(team_row_str)
+		file_output.write("\n")
+
+		file_output.close()
 
 		#print ",".join(team_row)
 

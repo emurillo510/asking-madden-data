@@ -1,0 +1,33 @@
+Team,Season,Division,W,L,T,Pct,PF,PA,Net Pts,TD,Home,Road,Div,Pct,Conf,Pct,Non-Conf,Streak,Last 5
+Buffalo Bills,American Football Conference - 2015 Regular Season,AFC East Team,2,0,0,1.000,55,27,28,7,0-0,2-0,1-0,1.000,2-0,1.000,0-0,W2,2-0
+Miami Dolphins,American Football Conference - 2015 Regular Season,AFC East Team,3,2,0,.600,133,110,23,17,1-1,2-1,0-1,.000,2-2,.500,1-0,W2,3-2
+New York Jets,American Football Conference - 2015 Regular Season,AFC East Team,0,1,0,.000,20,34,-14,2,0-0,0-1,0-0,.000,0-1,.000,0-0,L1,0-1
+New England Patriots,American Football Conference - 2015 Regular Season,AFC East Team,0,0,0,.000,0,0,0,0,0-0,0-0,0-0,.000,0-0,.000,0-0,-,0-0
+Cincinnati Bengals,American Football Conference - 2015 Regular Season,AFC North Team,2,0,0,1.000,49,23,26,5,0-0,2-0,1-0,1.000,2-0,1.000,0-0,W2,2-0
+Pittsburgh Steelers,American Football Conference - 2015 Regular Season,AFC North Team,3,3,0,.500,135,113,22,15,2-2,1-1,0-2,.000,1-3,.250,2-0,L2,2-3
+Baltimore Ravens,American Football Conference - 2015 Regular Season,AFC North Team,1,4,0,.200,107,127,-20,10,0-0,1-4,1-0,1.000,1-2,.333,0-2,L2,1-4
+Cleveland Browns,American Football Conference - 2015 Regular Season,AFC North Team,1,4,0,.200,118,131,-13,14,1-3,0-1,0-0,.000,1-3,.250,0-1,L4,1-4
+Indianapolis Colts,American Football Conference - 2015 Regular Season,AFC South Team,2,1,0,.667,88,82,6,10,0-0,2-1,2-0,1.000,2-0,1.000,0-1,L1,2-1
+Houston Texans,American Football Conference - 2015 Regular Season,AFC South Team,3,4,0,.429,153,157,-4,18,2-2,1-2,2-1,.667,2-3,.400,1-1,W1,3-2
+Jacksonville Jaguars,American Football Conference - 2015 Regular Season,AFC South Team,1,3,0,.250,83,109,-26,10,1-2,0-1,0-1,.000,1-1,.500,0-2,L2,1-3
+Tennessee Titans,American Football Conference - 2015 Regular Season,AFC South Team,1,6,0,.143,125,159,-34,15,0-4,1-2,0-2,.000,0-5,.000,1-1,L6,0-5
+Denver Broncos,American Football Conference - 2015 Regular Season,AFC West Team,6,0,0,1.000,144,100,44,13,3-0,3-0,2-0,1.000,4-0,1.000,2-0,W6,5-0
+Oakland Raiders,American Football Conference - 2015 Regular Season,AFC West Team,4,3,0,.571,178,173,5,20,2-2,2-1,1-1,.500,4-2,.667,0-1,W2,3-2
+Kansas City Chiefs,American Football Conference - 2015 Regular Season,AFC West Team,2,3,0,.400,119,120,-1,14,1-2,1-1,0-1,.000,2-1,.667,0-2,W1,2-3
+San Diego Chargers,American Football Conference - 2015 Regular Season,AFC West Team,2,3,0,.400,132,143,-11,14,2-2,0-1,0-1,.000,1-2,.333,1-1,L3,2-3
+Dallas Cowboys,National Football Conference - 2015 Regular Season,NFC East Team,1,0,0,1.000,20,10,10,2,0-0,1-0,1-0,1.000,1-0,1.000,0-0,W1,1-0
+Washington Redskins,National Football Conference - 2015 Regular Season,NFC East Team,3,1,0,.750,88,77,11,10,3-1,0-0,1-0,1.000,3-0,1.000,0-1,W3,3-1
+Philadelphia Eagles,National Football Conference - 2015 Regular Season,NFC East Team,2,3,0,.400,112,94,18,12,2-1,0-2,1-2,.333,2-3,.400,0-0,L1,2-3
+New York Giants,National Football Conference - 2015 Regular Season,NFC East Team,0,1,0,.000,7,27,-20,1,0-0,0-1,0-1,.000,0-1,.000,0-0,L1,0-1
+Green Bay Packers,National Football Conference - 2015 Regular Season,NFC North Team,6,1,0,.857,174,130,44,20,4-0,2-1,1-0,1.000,4-0,1.000,2-1,L1,4-1
+Chicago Bears,National Football Conference - 2015 Regular Season,NFC North Team,2,3,0,.400,106,139,-33,10,1-3,1-0,0-2,.000,0-3,.000,2-0,L1,2-3
+Minnesota Vikings,National Football Conference - 2015 Regular Season,NFC North Team,1,2,0,.333,46,63,-17,4,0-0,1-2,1-0,1.000,1-1,.500,0-1,W1,1-2
+Detroit Lions,National Football Conference - 2015 Regular Season,NFC North Team,0,1,0,.000,28,33,-5,4,0-0,0-1,0-0,.000,0-0,.000,0-1,L1,0-1
+Atlanta Falcons,National Football Conference - 2015 Regular Season,NFC South Team,1,0,0,1.000,10,7,3,1,0-0,1-0,0-0,.000,0-0,.000,1-0,W1,1-0
+Carolina Panthers,National Football Conference - 2015 Regular Season,NFC South Team,6,0,0,1.000,164,113,51,18,4-0,2-0,2-0,1.000,3-0,1.000,3-0,W6,5-0
+Tampa Bay Buccaneers,National Football Conference - 2015 Regular Season,NFC South Team,1,4,0,.200,114,160,-46,13,1-2,0-2,0-1,.000,0-2,.000,1-2,L1,1-4
+New Orleans Saints,National Football Conference - 2015 Regular Season,NFC South Team,0,3,0,.000,58,97,-39,6,0-0,0-3,0-1,.000,0-3,.000,0-0,L3,0-3
+Arizona Cardinals,National Football Conference - 2015 Regular Season,NFC West Team,5,2,0,.714,221,136,85,26,3-1,2-1,1-1,.500,3-1,.750,2-1,W2,3-2
+Seattle Seahawks,National Football Conference - 2015 Regular Season,NFC West Team,1,1,0,.500,37,30,7,4,0-0,1-1,1-0,1.000,1-1,.500,0-0,W1,1-1
+St. Louis Rams,National Football Conference - 2015 Regular Season,NFC West Team,1,2,0,.333,44,70,-26,5,0-0,1-2,1-0,1.000,1-2,.333,0-0,L1,1-2
+San Francisco 49ers,National Football Conference - 2015 Regular Season,NFC West Team,2,4,0,.333,76,150,-74,7,2-2,0-2,0-2,.000,1-3,.250,1-1,L1,1-4
