@@ -28,8 +28,8 @@ do
         do
             curl -A "$userAgent" "http://www.nfl.com/standings?category=div&season=$year-$season&split=$split" -o "target/nfl-teams-$year-$season-$split.html"
             sleep $[ ( $RANDOM % 10 )  + 1 ]s
+            echo "Saving to target/nfl-teams-$year-$season-$split.html"
         done
     done
 done
 
-echo "Saving to ${outputFile}"
