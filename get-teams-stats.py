@@ -35,30 +35,10 @@ for i in range(2002,2016):
 	for j in seasonType:
 		for link in team_stats_links:
 				page = link + "&" + "season=" + str(i) + "&" + "seasonType=" + j
-				##cmd = "curl -v -L -A " + "'" + userAgent + "' " + page + " > 'target/nfl-teams-stats-" + str(i) + "-" + j + "-" +str(counter) +".html'" 
-				##counter += 1
-				#print page
 				doc = requests.get(page)
-				#print doc.text
 				filename = "target/nfl-teams-stats-"+str(counter)+"-"+str(i)+"-"+j+".html"
 				output = open(filename,'w')
 				output.write(doc.text)
 				output.close
 				counter += 1
-				time.sleep(random.randint(1,10)
-				#sleep = "sleep $[ ( $RANDOM % 10 )  + 1 ]s"
-				#subprocess.call(cmd, shell=True)
-				
-			
-
-'''
-seasonType = ["REG","PRE"]
-
-#http://www.nfl.com/teams/baltimoreravens/statistics?season=2002&team=BAL&seasonType=REG
-# downloads all teams statistics page
-for i in range(2002,2016):
-	for j in seasonType:
-		for link in team_schedule_links:
-			page = link + "&" + "season=" + str(i) + "&" + "seasonType=" + j
-			print page
-'''
+				time.sleep(random.randint(1,10))
