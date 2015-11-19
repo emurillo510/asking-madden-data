@@ -1,0 +1,71 @@
+#!/usr/bin/python
+
+from bs4 import BeautifulSoup
+
+html_doc = "nfl-teams-stats.html"
+
+doc = BeautifulSoup(open(html_doc), 'html.parser')
+
+# gets year
+year = doc.find("option", selected='selected')
+print "year: " + year.text.strip()
+
+# gets team name
+team_name = doc.select("tr.thd2 > td nth-type-of(2)")
+print team_name.text.strip()
+
+# stats types
+stat_types = doc.select("tr.thd1 > td")
+print stat_types.text.strip()
+
+# selectorr: <table class="data-table1 team-stats">
+# format: [stat,colts,opp] 
+# columns: 3 rows: 16
+# gets team stats
+team_stats = doc.select("tr.tbdy1 ")
+
+# format: [Player,Att,Comp,Yds,Comp %,Yds/Att,TD,TD %,INT,INT %,Long,Sck,Sack/Lost,Rating]
+# columns: 14 rows: n (unknown)
+# gets passing stats
+# passing_stats = doc.select("tr.thd1 > td") 
+
+# format: [Player,Att,Yds,Yds/Att,Long,TD] 
+# columns: 6 rows: n (unknown)
+# gets rushing stats
+# rushing_stats = doc.select("tr.thd1 > td") 
+
+# format: [Player,Rec,Yds,Yds/Rec,Long,TD] 
+# columns: 6 rows: n (unknown)
+# gets receiving stats
+# recv_stats = doc.select("tr.thd1 > td") 
+
+# format: [Player,1-19 A,1-19 M,20-29 A,20-29 M,30-39 A,30-39 M,40-49 A,40-49 M,50+ A,50+ M]
+# columns: 11 rows: n (unknown)
+# gets field goal stats
+# fg_stats = doc.select("tr.thd1 > td") 
+
+# format: [Player,Punts,Avg,Touchbacks/g,IN 20,Long,Blck] 
+# columns: 6 rows: n (unknown)
+# gets punting stats
+# punting_stats = doc.select("tr.thd1 > td") 
+
+# format: [Player,Returns,FC,Yds/Ret,Long,TD]
+# columns: 6 rows: n (unknown)
+# gets punt return stats 
+# punt_rtn_stats = doc.select("tr.thd1 > td") 
+
+# format: [Player,Returns,Yds,Yds/Ret,Long,TD]
+# columns: 6 rows: n (unknown)
+# gets kick return stats
+# kick_rtn_stats = doc.select("tr.thd1 > td") 
+
+
+# format: [Player,Comb,Total,Assist,Sck,Fumb] 
+# columns: 6 rows: n (unknown)
+# defense stats
+# def_stats = doc.select("tr.thd1 > td") 
+
+# format: [Player,Int,Yds,Yds/Int,Long,TD] 
+# columns: 6 rows: n (unknown)
+# interception stats
+# int_stats = doc.select("tr.thd1 > td") 
