@@ -6,7 +6,7 @@ Creation Date: 11-03-2015
 ABOUT
 =====
 
-This project is strictly educational. My main goal is that I want to become a domain expert for data regarding the NFL. It will also allow me apply the Pomdoro Technique, learn Python, and Docker.
+Asking Madden is a data aggregation project which scrapes NFL.com and ESPN.com (shhhh) for teams and player statistics. This data will be used for project-oden, data visualization and helping win millions of dollars.
 
 DOCUMENTATION
 ===
@@ -14,7 +14,8 @@ DOCUMENTATION
 1. COMPATIBILITY AND REQUIREMENTS
 -------
 
-1. GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin15)
+1. GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin15) or Linux elton-ThinkPad-X220 4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+
 2. Python 2.7.10
 3. Beautiful Soup 4.4.0 
  
@@ -22,9 +23,9 @@ DOCUMENTATION
 2. HOW TO BUILD
 ----------------
 
-1. use bash to run the shell scripts.
+1. Use bash to run the shell scripts.
 2. pip install beautifulsoup4.
-3. you can run the individual scripts. Scripts description below.
+3. For documentation, please refer to section 3.
 
 
 3. FILE(S)
