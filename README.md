@@ -6,7 +6,7 @@ Creation Date: 11-03-2015
 ABOUT
 =====
 
-This project is strictly educational. My main goal is that I want to become a domain expert for data regarding the NFL. It will also allow me apply the Pomdoro Technique, learn Python, and Docker.
+Asking Madden is a data aggregation project which scrapes NFL.com and ESPN.com (shhhh) for teams and player statistics. This data will be used for project-oden, data visualization and helping win millions of dollars.
 
 DOCUMENTATION
 ===
