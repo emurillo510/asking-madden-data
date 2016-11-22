@@ -28,6 +28,10 @@ team_stats_for = doc.select("table.team-stats tr.tbdy1 td.first + td")
 for child in team_stats_for:
   print child.text.strip()
 
+team_stats_opp = doc.select("table.team-stats tr.tbdy1 > td:nth-of-type(3)")
+for child in team_stats_opp:
+  print child.text.strip()
+
 # selector: <table class="data-table1 team-stats">
 # format: [stat,colts,opp] 
 # columns: 3 rows: 16
