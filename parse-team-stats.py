@@ -11,18 +11,30 @@ year = doc.find("option", selected='selected')
 print "year: " + year.text.strip()
 
 # gets team name
-team_name = doc.select("tr.thd2 > td nth-type-of(2)")
-print team_name.text.strip()
+team_name = doc.select("table.team-stats tr.thd2 td")[1]
+print "team_name: " + team_name.text.strip()
 
-# stats types
-stat_types = doc.select("tr.thd1 > td")
-print stat_types.text.strip()
+# team stats types
+team_stat_types = doc.select("tr.thd1 > td")
+#print team_stat_types
 
-# selectorr: <table class="data-table1 team-stats">
+# team stats 
+team_stats_header = doc.select("table.team-stats tr.tbdy1 td.first")
+#print team_stats_header
+for child in team_stats_header:
+  print child.text.strip()
+
+team_stats_for = doc.select("table.team-stats tr.tbdy1 td.first + td")
+for child in team_stats_for:
+  print child.text.strip()
+
+# selector: <table class="data-table1 team-stats">
 # format: [stat,colts,opp] 
 # columns: 3 rows: 16
 # gets team stats
-team_stats = doc.select("tr.tbdy1 ")
+
+team_stats = [] 
+# team_stats = doc.select("tr.tbdy1 ")
 
 # format: [Player,Att,Comp,Yds,Comp %,Yds/Att,TD,TD %,INT,INT %,Long,Sck,Sack/Lost,Rating]
 # columns: 14 rows: n (unknown)
