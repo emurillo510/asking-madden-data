@@ -13,7 +13,7 @@ year = doc.find("option", selected='selected')
 #print year.text
 
 # get season type
-season_type = doc.select_one("tr > td.DETcolors")
+season_type = doc.select_one("tr > td:nth-of-type(1)")
 #print season_type.text.strip()
 
 # get schedule header

@@ -1,55 +1,81 @@
 #!/usr/bin/python
 
+import sys
+import glob
+import errno
 from bs4 import BeautifulSoup
 
-html_doc = "nfl-teams-stats.html"
+path = 'target/nfl-teams-stats-*.html'
 
-doc = BeautifulSoup(open(html_doc), 'html.parser')
+files = glob.glob(path)
+for file in files:
+  doc  = BeautifulSoup(open(file), "html.parser") 
 
-team_stats_header=[]
+  try:
+  
+    file_output_name = file + ".csv"
+    file_output = open(file_output_name, "w")
+    
+    team_stats_header=[]
 
-# gets year
-year = doc.find("option", selected='selected')
-print "year: " + year.text.strip()
+    #print "file_output: " + str(file_output)
 
-# gets team name
-team_name = doc.select("table.team-stats tr.thd2 td")[1]
-print "team_name: " + team_name.text.strip()
+  # gets year
+    year = doc.find("option", selected='selected')
+    print "year: " + year.text.strip()
 
-# team stats types
-team_stat_types = doc.select("tr.thd1 > td")
-#print team_stat_types
+  # gets team name
+    team_name = doc.select("table.team-stats tr.thd2 td")[1]
+    print "team_name: " + team_name.text.strip()
 
-# team stats 
-team_stats_header_data = doc.select("table.team-stats tr.tbdy1 td.first")
-#print team_stats_header
-#for child in team_stats_header_data:
-#  print child.text.strip()
+  # team stats types
+    team_stat_types = doc.select("tr.thd1 > td")
+  #print team_stat_types
 
-team_stats_header.append("Year")
-team_stats_header.append("Team Name")
+  # team stats 
+    team_stats_header_data = doc.select("table.team-stats tr.tbdy1 td.first")
+  #print team_stats_header
+  #for child in team_stats_header_data:
+  #  print child.text.strip()
 
-for i in team_stats_header_data:
-  team_stats_header.append(i.text.strip())
+    team_stats_header.append("Year")
+    team_stats_header.append("Team Name")
+
+    for i in team_stats_header_data:
+      team_stats_header.append(i.text.strip())
 
 
-team_stats_row = []
+    team_stats_row = []
 
-team_stats_row.append(year.text.strip())
-team_stats_row.append(team_name.text.strip())
+    team_stats_row.append(year.text.strip())
+    team_stats_row.append(team_name.text.strip())
 
-team_stats_for = doc.select("table.team-stats tr.tbdy1 td.first + td")
-for child in team_stats_for:
-    #print child.text.strip()
-    team_stats_row.append(child.text.strip())
+    team_stats_for = doc.select("table.team-stats tr.tbdy1 td.first + td")
+    for child in team_stats_for:
+      #print child.text.strip()
+      team_stats_row.append(child.text.strip())
 
-#team_stats_opp = doc.select("table.team-stats tr.tbdy1 > td:nth-of-type(3)")
-#for child in team_stats_opp:
-#  print child.text.strip()
-#  team_stats_row.append(child.text.strip())
+  #team_stats_opp = doc.select("table.team-stats tr.tbdy1 > td:nth-of-type(3)")
+  #for child in team_stats_opp:
+  #  print child.text.strip()
+  #  team_stats_row.append(child.text.strip())
 
-print ",".join(team_stats_header)
-print ",".join(team_stats_row)
+    team_stats_header_str = ",".join(team_stats_header)
+    team_stats_row_str = ",".join(team_stats_row)
+
+    print team_stats_header_str
+    print team_stats_row_str
+
+    file_output.write(team_stats_header_str)
+    file_output.write("\n")
+
+    file_output.write(team_stats_row_str)
+    file_output.write("\n")
+    
+  except IndexError:
+     print "No data."
+
+
 
 # selector: <table class="data-table1 team-stats">
 # format: [stat,colts,opp] 
@@ -104,3 +130,9 @@ team_stats = []
 # columns: 6 rows: n (unknown)
 # interception stats
 # int_stats = doc.select("tr.thd1 > td") 
+
+
+'''
+else:
+  print "no stats on this file...
+'''
