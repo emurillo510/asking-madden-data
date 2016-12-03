@@ -64,17 +64,23 @@ game_scheduled_time = doc.select('table.data-table1 tr.tbdy1 td a')
 
 game_attendence = doc.select('table.data-table1 tr.tbdy1 td')
 
-for idx, val in enumerate(game_attendence):
-	#print "current: " + str(idx) + ":" + unicode(val.text.strip())
-	if "," in unicode(val.text.strip()):
-	  if( idx % 8 == 4 or idx == 4 or idx % 8 == 7):
-	    print val.text.strip()
+#for idx, val in enumerate(game_attendence):
+#	#print "current: " + str(idx) + ":" + unicode(val.text.strip())
+#	if "," in unicode(val.text.strip()):
+#	  if( idx % 8 == 4 or idx == 4 or idx % 8 == 7):
+#	    print val.text.strip()
 
-#game_top_passer = doc.select("top_passer")
+game_top_passer = doc.select("table.data-table1 tr.tbdy1 td a")
+
+#for idx, val in enumerate(game_top_passer):
+#	if(len(val.text.strip()) > 3 and val.text.strip() != "Final"):
+#	  print val.text.strip()
 
 #game_top_rusher = doc.select("top_rusher")
+game_top_rusher = doc.select("table.data-table1 tr.tbdy1 td a")
 
 #game_top_receiver = doc.select("top_receiver")
+game_top_receiver = doc.select("table.data-table1 tr.tbdy1 td a")
 
 # get week_schedule
 #week_schedule = doc.select("tr.tbdy1 td")
