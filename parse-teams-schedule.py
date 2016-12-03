@@ -22,12 +22,59 @@ schedule_header = doc.select("tr.thd2 > td")
 #	print i.text.strip()
 
 schedule_team_header.append("Year")
-schedule_team_header.append(str(season_type.text.strip()))
+schedule_team_header.append("Season Type")
 for i in schedule_header:
 	#print i.text.strip()
 	schedule_team_header.append(str(i.text.strip()))
 
 print ",".join(schedule_team_header)
+
+
+year = doc.find("option", selected='selected')
+print year.text.strip()
+
+season = doc.find('td', colspan=11)
+print season.text.strip()
+
+game_week = doc.select('table.data-table1 tr.tbdy1 td.first')
+#print game_week
+
+game_date = doc.select('table.data-table1 tr.tbdy1 td.first + td')
+#for i in game_date:
+#	print i.text.strip()
+
+game_matchup_start = doc.select('table.data-table1 tr.tbdy1 td a')
+
+#for idx, val in enumerate(game_matchup_start):
+
+	#print "current: " + str(idx) + ":" + unicode(val.text.strip())
+	#if( idx%6 == 0 or idx == 0):
+		#print "=========================="
+		#print "Visitors: " + unicode(val.text.strip())
+	#if( idx%6 == 1 or idx == 1 ):
+		#print "Home: " + unicode(val.text.strip())
+		#print "==========================="
+
+game_scheduled_time = doc.select('table.data-table1 tr.tbdy1 td a')
+
+#for idx, val in enumerate(game_scheduled_time):
+	#print "current: " + str(idx) + ":" + unicode(val.text.strip())
+	#if( idx % 6 == 2 or idx == 2):
+		#print "Time(ET): " + unicode(val.text.strip())
+
+game_attendence = doc.select('table.data-table1 tr.tbdy1 td')
+
+for idx, val in enumerate(game_attendence):
+	#print "current: " + str(idx) + ":" + unicode(val.text.strip())
+	if "," in unicode(val.text.strip()):
+	  if( idx % 8 == 4 or idx == 4 or idx % 8 == 7):
+	    print val.text.strip()
+
+#game_top_passer = doc.select("top_passer")
+
+#game_top_rusher = doc.select("top_rusher")
+
+#game_top_receiver = doc.select("top_receiver")
 
 # get week_schedule
 #week_schedule = doc.select("tr.tbdy1 td")
