@@ -31,16 +31,28 @@ DOCUMENTATION
 3. FILE(S)
 ----------
 
-1. get-teams-schedules.py
+1.  get-teams-schedules.py
    * Python script to aggregate all team schedule for season.
-2. get-teams-standings.sh
+2.  get-teams-standings.sh
    * Shell script to aggregate all team standings for season.
-3. get-teams-stats.py
+3.  get-teams-stats.py
    * Python script to aggregate team stats for season.
-4. parse-teams-schedule.py
+4.  parse-teams-schedule.py
    * Python script to parse team schedules.
-5. parse-teams-standings.py 
+5.  parse-teams-standings.py 
    * Python script to parse team standings.
+6.  get-player-careerstats.py
+   * Shell script to aggregate all player career stats for season.
+7.  get-player-combine.py
+    * Shell script to aggregate all player combine stats for season.
+8.  get-player-draft.py
+    * Shell script to aggregate all player draft data for season.
+9.  get-player-gamelogs.py
+    * Shell script to aggregate all player gamelogs for season.
+10. get-player-gamesplits.py
+    * Shell script to aggregate all player gamesplits for season.
+11. get-player-situationalstats.py
+    * Shell script to aggregate all player situational stats for season.
 
 4. FILE DIRECTORY
 -----------------
@@ -55,13 +67,8 @@ CONTACT
 
 TODO
 ===
-* Parse Team Stats
-* Create Pseudo Code inside get-team-stats.sh
-* Create Pseudo Code inside parse-team-stats.py
 * Parse Player Stats
-* Get all Player links for every team for every season
 * Test if all files are converted to CSV correctly.
-* Mock frontend for application
 * Create database schema for application
 
 Application Flow
